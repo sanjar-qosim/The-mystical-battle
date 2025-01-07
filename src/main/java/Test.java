@@ -1,20 +1,24 @@
 public class Test {
 
     public static void main(String[] args) {
-        Hero hero1 = new Hero.Builder()
-                .name("Mag")
-                .damage(200)
-                .health(178)
+        Mage mag1 = Mage.builder()
+                .name("Crystal Mayden")
+                .health(85.5)
+                .damage(25)
                 .build();
+        mag1.showInfo();
 
-        hero1.showInfo();
+        Shaman shaman1 = Shaman.builder()
+                .name("Shaman")
+                .health(60)
+                .build();
+        shaman1.showInfo();
 
-        Hero hero2 = Hero.builder()
+        Paladin paladin1 = Paladin.builder()
                 .name("Tiny")
-                .damage(150)
-                .health(290)
+                .health(117)
+                .damage(12)
                 .build();
-
-        hero2.showInfo();
+        paladin1.showInfo();
     }
 }
