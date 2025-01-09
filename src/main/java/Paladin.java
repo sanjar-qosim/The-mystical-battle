@@ -11,8 +11,8 @@ public class Paladin extends GeneralAttributes implements Attacker, Defender{
     }
 
     @Override
-    public void attack() {
-
+    public void attack(GeneralAttributes target, double damage) {
+        target.health -= damage;
     }
 
     public void showInfo(){

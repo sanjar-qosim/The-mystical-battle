@@ -11,8 +11,8 @@ public class Mage extends GeneralAttributes implements Attacker, Defender {
     }
 
     @Override
-    public void attack() {
-
+    public void attack(GeneralAttributes target, double damage) {
+        target.health -= damage;
     }
 
     @Override

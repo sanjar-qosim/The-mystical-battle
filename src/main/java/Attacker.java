@@ -1,3 +1,3 @@
 public interface Attacker {
-    void attack();
+    void attack(GeneralAttributes target, double damage);
 }

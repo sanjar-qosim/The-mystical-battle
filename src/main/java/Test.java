@@ -20,5 +20,9 @@ public class Test {
                 .damage(12)
                 .build();
         paladin1.showInfo();
+
+        System.out.println();
+        mag1.attack(paladin1, 17);
+        System.out.println(paladin1.health);
     }
 }
