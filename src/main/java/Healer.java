@@ -1,3 +1,3 @@
 public interface Healer {
-    void heal();
+    void heal(GeneralAttributes target, double damage);
 }

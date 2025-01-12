@@ -14,8 +14,8 @@ public class Shaman extends GeneralAttributes implements Healer{
     }
 
     @Override
-    public void heal() {
-
+    public void heal(GeneralAttributes target, double damage) {
+        target.health += damage;
     }
 
     public static class Builder {

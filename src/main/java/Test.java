@@ -24,5 +24,7 @@ public class Test {
         System.out.println();
         mag1.attack(paladin1, 17);
         System.out.println(paladin1.health);
+        shaman1.heal(paladin1, 10);
+        System.out.println(paladin1.health);
     }
 }
