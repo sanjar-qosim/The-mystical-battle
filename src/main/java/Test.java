@@ -3,28 +3,26 @@ public class Test {
     public static void main(String[] args) {
         Mage mag1 = Mage.builder()
                 .name("Crystal Mayden")
-                .health(85.5)
+                .health(85)
                 .damage(25)
                 .build();
         mag1.showInfo();
 
+        System.out.println();
+
         Shaman shaman1 = Shaman.builder()
-                .name("Shaman")
-                .health(60)
+                .name("Rhasta")
+                .health(50)
                 .build();
         shaman1.showInfo();
 
+        System.out.println();
+
         Paladin paladin1 = Paladin.builder()
-                .name("Tiny")
-                .health(117)
-                .damage(12)
+                .name("Paladin")
+                .damage(25)
+                .health(10)
                 .build();
         paladin1.showInfo();
-
-        System.out.println();
-        mag1.attack(paladin1, 17);
-        System.out.println(paladin1.health);
-        shaman1.heal(paladin1, 10);
-        System.out.println(paladin1.health);
     }
 }

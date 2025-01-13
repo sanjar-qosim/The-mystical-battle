@@ -1,5 +1,5 @@
-public class Shaman extends GeneralAttributes implements Healer{
-    Shaman(final String name, final double health){
+public class Shaman extends GeneralAttributes implements NearbyHero{
+    private Shaman(final String name, final double health){
         this.name = name;
         this.health = health;
     }
@@ -8,8 +8,8 @@ public class Shaman extends GeneralAttributes implements Healer{
         return new Builder();
     }
 
-    public void showInfo(){
-        System.out.println("Name: " + name + "\nHealth: " + health);
+    @Override
+    public void attack(GeneralAttributes target, double damage) {
 
     }
 
@@ -21,20 +21,35 @@ public class Shaman extends GeneralAttributes implements Healer{
     public static class Builder {
         private String name;
         private double health;
-        private double damage;
 
         public Builder name(String name){
-            this.name = name;
-            return this;
+            if (name.length() >= 3) {
+                this.name = name;
+                return this;
+            }
+            System.out.println("The name value must be more than three letters long");
+            return null;
         }
 
         public Builder health(double health){
-            this.health = health;
-            return this;
+            if (health > 0) {
+                this.health = health;
+                return this;
+            }
+            System.out.println("The value of health must be greater than 0");
+            return null;
+        }
+
+        public boolean isValid(){
+            return name != null && health > 0;
         }
 
         public Shaman build(){
-            return new Shaman(name, health);
+            if (isValid()) {
+                return new Shaman(name, health);
+            }
+            System.out.println("Invalid data has been entered");
+            return null;
         }
     }
 }

@@ -1,3 +1,3 @@
-public interface Attacker {
+public interface FarHero {
     void attack(GeneralAttributes target, double damage);
 }
