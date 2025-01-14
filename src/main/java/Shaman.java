@@ -1,4 +1,4 @@
-public class Shaman extends GeneralAttributes implements NearbyHero{
+public class Shaman extends GeneralAttributes implements Healer{
     private Shaman(final String name, final double health){
         this.name = name;
         this.health = health;
@@ -7,15 +7,14 @@ public class Shaman extends GeneralAttributes implements NearbyHero{
     public static Builder builder(){
         return new Builder();
     }
-
     @Override
-    public void attack(GeneralAttributes target, double damage) {
-
-    }
-
-    @Override
-    public void heal(GeneralAttributes target, double damage) {
-        target.health += damage;
+    public double heal(GeneralAttributes target, double damage) {
+        if (damage > 0) {
+            target.health += damage;
+            return target.health;
+        }
+        System.out.println("Not valid number");
+        return target.health;
     }
 
     public static class Builder {

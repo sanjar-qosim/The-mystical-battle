@@ -1,4 +1,4 @@
-public class Paladin extends GeneralAttributes implements NearbyHero{
+public class Paladin extends GeneralAttributes implements Attacker{
 
     private Paladin(final String name, final double health, final double damage){
         this.name = name;
@@ -11,13 +11,13 @@ public class Paladin extends GeneralAttributes implements NearbyHero{
     }
 
     @Override
-    public void attack(GeneralAttributes target, double damage) {
-        target.health -= damage;
-    }
-
-    @Override
-    public void heal(GeneralAttributes target, double damage) {
-
+    public double attack(GeneralAttributes target, double damage) {
+        if (damage > 0) {
+            target.health -= damage;
+            return target.health;
+        }
+        System.out.println("Not valid number");
+        return target.health;
     }
 
     public static class Builder {

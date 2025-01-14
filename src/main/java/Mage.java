@@ -1,4 +1,4 @@
-public class Mage extends GeneralAttributes implements FarHero {
+public class Mage extends GeneralAttributes implements Attacker {
 
     private Mage(final String name, final double health, final double damage){
         this.name = name;
@@ -11,8 +11,13 @@ public class Mage extends GeneralAttributes implements FarHero {
     }
 
     @Override
-    public void attack(GeneralAttributes target, double damage) {
-        target.health -= damage;
+    public double attack(GeneralAttributes target, double damage) {
+        if (damage > 0) {
+            target.health -= damage;
+            return target.health;
+        }
+        System.out.println("Not valid number");
+        return target.health;
     }
 
     public static class Builder {

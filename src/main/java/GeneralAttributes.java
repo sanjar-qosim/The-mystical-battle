@@ -5,7 +5,7 @@ public abstract class GeneralAttributes {
     protected double damage;
 
     protected void showInfo(){
-        System.out.println("{Name: " + name + "}, {Health: " + health + "}, {Damage: " + damage + "}");
+        System.out.println("{Name: " + name + "; Health: " + health + "; Damage: " + damage + "}");
     }
 
 }

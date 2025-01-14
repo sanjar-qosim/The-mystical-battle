@@ -8,15 +8,11 @@ public class Test {
                 .build();
         mag1.showInfo();
 
-        System.out.println();
-
         Shaman shaman1 = Shaman.builder()
                 .name("Rhasta")
                 .health(50)
                 .build();
         shaman1.showInfo();
-
-        System.out.println();
 
         Paladin paladin1 = Paladin.builder()
                 .name("Paladin")
@@ -24,5 +20,8 @@ public class Test {
                 .health(10)
                 .build();
         paladin1.showInfo();
+
+        System.out.println(mag1.attack(paladin1, 5));
+        System.out.println(shaman1.heal(paladin1, 3));
     }
 }
