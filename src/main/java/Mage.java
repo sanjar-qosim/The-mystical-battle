@@ -1,4 +1,6 @@
-public class Mage extends GeneralAttributes implements Attacker {
+public class Mage extends GeneralAttributes implements Damageable {
+
+    private double damage;
 
     private Mage(final String name, final double health, final double damage){
         this.name = name;
@@ -18,6 +20,10 @@ public class Mage extends GeneralAttributes implements Attacker {
         }
         System.out.println("Not valid number");
         return target.health;
+    }
+
+    public void showInfo(){
+        System.out.println("{Name: " + name + "; Health: " + health + "; Damage: " + damage + "}");
     }
 
     public static class Builder {

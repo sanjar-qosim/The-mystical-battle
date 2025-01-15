@@ -1,4 +1,5 @@
 public class Shaman extends GeneralAttributes implements Healer{
+
     private Shaman(final String name, final double health){
         this.name = name;
         this.health = health;
@@ -15,6 +16,10 @@ public class Shaman extends GeneralAttributes implements Healer{
         }
         System.out.println("Not valid number");
         return target.health;
+    }
+
+    public void showInfo(){
+        System.out.println("{Name: " + name + "; Health: " + health + "}");
     }
 
     public static class Builder {
