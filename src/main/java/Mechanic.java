@@ -78,4 +78,22 @@ public class Mechanic {
             ((Paladin) hero).showInfo();
         }
     }
+
+    public double hittingAnOpponent(GeneralAttributes victim, double damage){
+        if (damage < 0) {
+            return 0;
+        }
+        if (victim.health < damage) {
+            System.out.println("The " + victim.name + " is killed");
+            victim = null;
+            return 0;
+        }
+        victim.health -= damage;
+        return  victim.health;
+    }
+
+    public double healAnAlly(GeneralAttributes victim, double damage){
+        victim.health += damage;
+        return victim.health;
+    }
 }
