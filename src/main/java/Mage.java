@@ -1,7 +1,5 @@
 public class Mage extends GeneralAttributes implements Damageable {
 
-    private double damage;
-
     private Mage(final String name, final double health, final double damage){
         this.name = name;
         this.health = health;

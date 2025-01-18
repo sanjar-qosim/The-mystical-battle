@@ -1,5 +1,7 @@
 public class Shaman extends GeneralAttributes implements Healer{
 
+    private final double damage = 0;
+
     private Shaman(final String name, final double health){
         this.name = name;
         this.health = health;

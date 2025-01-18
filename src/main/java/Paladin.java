@@ -1,7 +1,5 @@
 public class Paladin extends GeneralAttributes implements Damageable{
 
-    private double damage;
-
     private Paladin(final String name, final double health, final double damage){
         this.name = name;
         this.health = health;
