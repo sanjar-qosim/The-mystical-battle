@@ -3,8 +3,22 @@ import java.util.Scanner;
 public class Mechanic {
 
     Scanner scanner = new Scanner(System.in);
-
     String askedHero;
+
+    public void askAction(){
+        System.out.println("Select an action:\n1. Create hero;\n2. Choose hero\n3. Show all heroes;\n4. Exit.");
+        while (true) {
+            int askAction = scanner.nextInt();
+            if (askAction == 4) {
+                break;
+            }
+            if (askAction == 1) {
+                askHero();
+                break;
+            }
+            System.out.println("You entered wrong action!");
+        }
+    }
 
     public String askHero(){
         System.out.println("Which type hero do you want to create?\nMage;\nShaman;\nPaladin?");
@@ -16,7 +30,7 @@ public class Mechanic {
             } else if (askHero.equals("exit")) {
                 break;
             } else {
-                System.out.println("You enter wrong type! Please, enter right type or exit program!");
+                System.out.println("You entered wrong type! Please, enter right type or exit program!");
             }
         }
         return null;
