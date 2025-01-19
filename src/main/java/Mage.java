@@ -6,7 +6,9 @@ public class Mage extends GeneralAttributes implements Damageable {
         this.damage = damage;
     }
 
-    public static Builder builder(){
+    Mage(){}
+
+    public Builder builder(){
         return new Builder();
     }
 

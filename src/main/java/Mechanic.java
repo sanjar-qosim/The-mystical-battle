@@ -1,6 +1,10 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Mechanic {
+
+    public List<GeneralAttributes> allHeroes = new ArrayList<>();
 
     Scanner scanner = new Scanner(System.in);
     String askedHero;
@@ -44,11 +48,13 @@ public class Mechanic {
             double health = scanner.nextDouble();
             System.out.println("Enter a damage of your hero:");
             double damage = scanner.nextDouble();
-            return Mage.builder()
+            Mage hero = new Mage().builder()
                     .name(name)
                     .health(health)
                     .damage(damage)
                     .build();
+            allHeroes.add(hero);
+            return hero;
         }
 
         if (askedHero.equals("Shaman")) {
@@ -56,10 +62,12 @@ public class Mechanic {
             String name = scanner.nextLine();
             System.out.println("Enter a health of your hero:");
             double health = scanner.nextDouble();
-            return Shaman.builder()
+            Shaman hero = new Shaman().builder()
                     .name(name)
                     .health(health)
                     .build();
+            allHeroes.add(hero);
+            return hero;
         }
 
         if (askedHero.equals("Paladin")) {
@@ -69,11 +77,13 @@ public class Mechanic {
             double health = scanner.nextDouble();
             System.out.println("Enter a damage of your hero:");
             double damage = scanner.nextDouble();
-            return Paladin.builder()
+            Paladin hero = new Paladin().builder()
                     .name(name)
                     .health(health)
                     .damage(damage)
                     .build();
+            allHeroes.add(hero);
+            return hero;
         }
 
         return null;
@@ -91,6 +101,19 @@ public class Mechanic {
         if (hero.getClass() == Paladin.class) {
             ((Paladin) hero).showInfo();
         }
+    }
+
+    public void showAllHeroes(){
+        if (allHeroes.isEmpty()) {
+            System.out.println("There aren't created heroes!");
+        }
+
+        int amount = 0;
+        for (GeneralAttributes tmp : allHeroes) {
+            amount++;
+            System.out.println("{Name: " + tmp.name + "; Health: " + tmp.health + "; Damage: " + tmp.damage + "}");
+        }
+        System.out.println("Total: " + amount);
     }
 
     public double attack(GeneralAttributes target, double damage){

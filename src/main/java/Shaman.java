@@ -7,7 +7,9 @@ public class Shaman extends GeneralAttributes implements Healer{
         this.health = health;
     }
 
-    public static Builder builder(){
+    Shaman(){}
+
+    public Builder builder(){
         return new Builder();
     }
     @Override

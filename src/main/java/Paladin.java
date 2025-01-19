@@ -5,8 +5,9 @@ public class Paladin extends GeneralAttributes implements Damageable{
         this.health = health;
         this.damage = damage;
     }
+    Paladin() {}
 
-    public static Builder builder(){
+    public Builder builder(){
         return new Builder();
     }
 
